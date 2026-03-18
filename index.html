@@ -1,153 +1,222 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo Gualberto - Método Duduzeira</title>
+    <title>Mentoria - Venda Sem Perder Vendas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            500: '#d97706', // Amber 600
+                            600: '#b45309', // Amber 700
+                            900: '#0f172a', // Slate 900
+                            950: '#020617', // Slate 950
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
         }
-        .gold-gradient {
-            background: linear-gradient(90deg, #d4af37 0%, #f9d976 50%, #d4af37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .btn-gold {
-            background: linear-gradient(90deg, #d4af37 0%, #f9d976 100%);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-        .card-dark {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-    </style>
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="antialiased">
+<body class="bg-brand-950 text-white font-sans antialiased selection:bg-brand-500 selection:text-white">
 
     <!-- Hero Section -->
-    <header class="relative pt-20 pb-16 px-6 overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="inline-block px-4 py-1 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-500 text-sm font-semibold mb-6 uppercase tracking-wider">
-                7 Anos de Experiência no Campo de Batalha
-            </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                Ganhe até <span class="gold-gradient">R$ 5.000,00 por mês</span> online, sem estoque e sem falsas promessas.
+    <header class="relative overflow-hidden pt-20 pb-32 lg:pt-32 lg:pb-40">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-950/80 via-brand-950/90 to-brand-950"></div>
+        
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 text-brand-500 border border-brand-500/20 mb-8 font-medium text-sm tracking-wide">
+                <i data-lucide="flame" class="w-4 h-4"></i>
+                Vagas Abertas para a Mentoria
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                Seu negócio <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700">não quebra</span> por falta de marketing.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-yellow-400">Ele quebra por falta de atendimento.</span>
             </h1>
-            <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-                Eu sou Eduardo Gualberto, o Duduzeira. Já faturei mais de 100k, já quebrei e me ergui. Vou te mostrar o caminho mais curto que aprendi na marra.
+            
+            <p class="mt-6 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
+                Pare de jogar dinheiro fora com anúncios que trazem clientes que sua equipe não sabe converter. Descubra o método de atendimento moderno que transforma curiosos em compradores fiéis.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://pay.kirvano.com/f8a82fab-fdfc-4400-8781-65d7e7b69a90" class="btn-gold text-black font-bold py-4 px-8 rounded-lg text-lg">
-                    QUERO COMEÇAR AGORA
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#offer" class="px-8 py-4 text-lg font-bold rounded-lg bg-brand-500 hover:bg-brand-600 text-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(217,119,6,0.4)] w-full sm:w-auto">
+                    Quero Dobrar Minhas Vendas
                 </a>
-                <a href="https://wa.me/5562982402377" class="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg text-lg border border-white/20 transition">
-                    FALAR NO WHATSAPP
+                <a href="#case" class="px-8 py-4 text-lg font-bold rounded-lg bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all w-full sm:w-auto">
+                    Ver como funciona
                 </a>
             </div>
         </div>
-        <!-- Efeito de luz no fundo -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-yellow-500/10 rounded-full blur-[120px] -z-10"></div>
     </header>
 
-    <!-- Social Proof Section -->
-    <section class="py-12 bg-zinc-900/50 border-y border-white/5">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <!-- Case Study Section -->
+    <section id="case" class="py-24 bg-brand-900 border-y border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <p class="text-3xl font-bold gold-gradient">+7 Anos</p>
-                    <p class="text-gray-500 uppercase text-xs tracking-widest mt-1">De Mercado</p>
-                </div>
-                <div>
-                    <p class="text-3xl font-bold gold-gradient">+R$ 100.000</p>
-                    <p class="text-gray-500 uppercase text-xs tracking-widest mt-1">Faturados Online</p>
-                </div>
-                <div>
-                    <p class="text-3xl font-bold gold-gradient">0 Estoque</p>
-                    <p class="text-gray-500 uppercase text-xs tracking-widest mt-1">Risco Controlado</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Method Section -->
-    <section class="py-24 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">O que eu vou te ensinar?</h2>
-                <p class="text-gray-400">Sem contos de fadas. Apenas o que funciona para colocar dinheiro no seu bolso.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="card-dark p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Como eu fiz uma barbearia saltar de <span class="text-brand-500">50 mil para 100 mil</span> por mês.
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        Eles investiam pesado em tráfego pago. O WhatsApp não parava de apitar. Mas no fim do mês, a conta não fechava. O problema? <strong>Eles perdiam 70% das vendas no atendimento.</strong>
+                    </p>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Implementamos o <em>Método do Atendimento Camaleão</em>. Paramos de usar scripts engessados e começamos a ler o perfil de cada cliente, adaptando a abordagem para vender valor e criar conexão real.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-brand-950 p-6 rounded-xl border border-white/5">
+                            <div class="text-gray-500 text-sm font-medium mb-1">Faturamento Antes</div>
+                            <div class="text-3xl font-bold text-red-400">R$ 50k<span class="text-sm font-normal text-gray-500">/mês</span></div>
+                        </div>
+                        <div class="bg-brand-950 p-6 rounded-xl border border-brand-500/30 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-2 opacity-20">
+                                <i data-lucide="trending-up" class="w-12 h-12 text-brand-500"></i>
+                            </div>
+                            <div class="text-gray-500 text-sm font-medium mb-1 relative z-10">Faturamento Depois</div>
+                            <div class="text-3xl font-bold text-brand-500 relative z-10">R$ 100k<span class="text-sm font-normal text-gray-500">/mês</span></div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Venda Orgânica</h3>
-                    <p class="text-gray-400">Como vender de forma prática sem gastar um único centavo com anúncios. Ideal para quem está começando com pouco orçamento.</p>
                 </div>
-
-                <div class="card-dark p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-brand-500 to-yellow-500 rounded-2xl opacity-20 blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="" class="relative rounded-2xl shadow-2xl border border-white/10 w-full object-cover aspect-[4/3]">
+                    <div class="absolute -bottom-6 -left-6 bg-brand-950 p-4 rounded-xl border border-white/10 shadow-xl flex items-center gap-4">
+                        <div class="bg-green-500/20 p-3 rounded-full text-green-500">
+                            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">Crescimento de</p>
+                            <p class="font-bold text-xl">100% em 60 dias</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Anúncios Online</h3>
-                    <p class="text-gray-400">Domine as ferramentas de tráfego pago para escalar seus resultados. Vou te ensinar o que realmente traz retorno sobre o investimento.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Story/Experience Section -->
-    <section class="py-24 px-6 bg-zinc-900/30">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-1">
-                <h2 class="text-3xl font-bold mb-6">Por que confiar no <span class="gold-gradient">Duduzeira?</span></h2>
-                <div class="space-y-4 text-gray-400">
-                    <p>Muitos gurus prometem riqueza da noite para o dia. Eu não estou aqui para isso. Eu estou no mercado há 7 anos.</p>
-                    <p>Eu já senti o gosto do sucesso e já senti o peso de quebrar e ter que recomeçar do zero. Mas foram essas quedas que me ensinaram o que não fazer.</p>
-                    <p>Hoje, meu objetivo é simples: te entregar o <strong>caminho mais curto</strong>. Aquele que eu demorei anos para descobrir, para que você não erre onde eu errei.</p>
-                </div>
+    <!-- Personal Transformation Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Eu mudei a realidade dos outros porque <span class="text-brand-500">primeiro mudei a minha.</span></h2>
+                <p class="text-gray-400 text-lg">
+                    Eu sei o que é suar o mês inteiro e ver pouco dinheiro sobrar. Eu não nasci ensinando vendas, eu aprendi na trincheira.
+                </p>
             </div>
-            <div class="flex-1 w-full border-4 border-yellow-500/20 p-4 rounded-3xl relative">
-                 <div class="bg-zinc-800 aspect-[3/4] rounded-2xl flex items-center justify-center text-zinc-500 overflow-hidden">
-                    <span class="text-sm p-4 text-center">Aqui você pode colocar sua foto profissional</span>
-                 </div>
-                 <div class="absolute -bottom-6 -right-6 bg-yellow-500 text-black font-bold p-4 rounded-lg shadow-xl">
-                    7 Anos de Experiência
-                 </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Before -->
+                <div class="bg-brand-900 rounded-2xl overflow-hidden border border-white/5 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="aspect-[16/9] bg-gray-800 relative flex items-center justify-center">
+                        <span class="absolute inset-0 flex items-center justify-center text-gray-600 border-2 border-dashed border-gray-600 m-4 rounded-xl">
+                            
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <div class="inline-block px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-sm font-semibold mb-4">A Minha Antiga Realidade</div>
+                        <h3 class="text-2xl font-bold mb-2">Ganhava R$ 2.000 por mês</h3>
+                        <p class="text-gray-400">Trabalhava duro, muitas horas por dia, mas não sabia como fechar vendas de alto valor. Todo cliente parecia achar caro, e eu não sabia como contornar as objeções.</p>
+                    </div>
+                </div>
+
+                <!-- After -->
+                <div class="bg-brand-900 rounded-2xl overflow-hidden border border-brand-500/30 shadow-[0_0_30px_rgba(217,119,6,0.1)]">
+                    <div class="aspect-[16/9] bg-gray-800 relative flex items-center justify-center">
+                        <span class="absolute inset-0 flex items-center justify-center text-brand-500 border-2 border-dashed border-brand-500/50 m-4 rounded-xl">
+                            
+                        </span>
+                    </div>
+                    <div class="p-8">
+                        <div class="inline-block px-3 py-1 bg-brand-500/10 text-brand-500 rounded-full text-sm font-semibold mb-4">A Minha Realidade Hoje</div>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Ganho de R$ 6.000 a R$ 10.000 /mês</h3>
+                        <p class="text-gray-400">Depois que entendi como funciona o atendimento e a psicologia de vendas de hoje, o jogo virou. Trabalho com mais inteligência, converto muito mais e tenho liberdade.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Final -->
-    <section class="py-24 px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold mb-8 italic">"Não é sobre ficar rico rápido, é sobre ter uma renda extra sólida que não atrapalha o que você já faz."</h2>
-            <div class="p-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mb-12"></div>
-            <p class="text-2xl mb-10">Pronto para colocar <span class="text-yellow-500 font-bold">R$ 5.000,00</span> a mais no bolso?</p>
-            <a href="https://pay.kirvano.com/f8a82fab-fdfc-4400-8781-65d7e7b69a90" class="btn-gold text-black font-bold py-5 px-12 rounded-full text-2xl inline-block">
-                GARANTIR MINHA VAGA
-            </a>
-            <p class="mt-8 text-gray-500">
-                Dúvidas? <a href="https://wa.me/5562982402377" class="underline hover:text-white">Me chama no WhatsApp: (62) 98240-2377</a>
-            </p>
+    <!-- Mentorship Details -->
+    <section class="py-24 bg-brand-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16">O que você vai aprender na <span class="text-brand-500">Mentoria</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-brand-950 p-8 rounded-2xl border border-white/5 text-left hover:border-brand-500/50 transition-colors">
+                    <div class="bg-brand-500/20 w-14 h-14 flex items-center justify-center rounded-xl text-brand-500 mb-6">
+                        <i data-lucide="scan-face" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">O Atendimento Camaleão</h3>
+                    <p class="text-gray-400">Esqueça os scripts de vendas engessados. Aprenda a identificar o estilo e a frequência de cada cliente para adaptar sua abordagem de forma única e natural.</p>
+                </div>
+                
+                <div class="bg-brand-950 p-8 rounded-2xl border border-white/5 text-left hover:border-brand-500/50 transition-colors">
+                    <div class="bg-brand-500/20 w-14 h-14 flex items-center justify-center rounded-xl text-brand-500 mb-6">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Conexão Sob Medida</h3>
+                    <p class="text-gray-400">Cada cliente tem uma maneira diferente de ser atendido. Descubra como se moldar à realidade e ao tom de voz dele para gerar extrema confiança na hora da venda.</p>
+                </div>
+                
+                <div class="bg-brand-950 p-8 rounded-2xl border border-white/5 text-left hover:border-brand-500/50 transition-colors">
+                    <div class="bg-brand-500/20 w-14 h-14 flex items-center justify-center rounded-xl text-brand-500 mb-6">
+                        <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Acompanhamento Implacável</h3>
+                    <p class="text-gray-400">A fortuna está no follow-up. Aprenda a cobrar e relembrar o cliente no tempo certo (respeitando a frequência dele), sem nunca parecer chato ou desesperado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA & Offer -->
+    <section id="offer" class="py-24 relative">
+        <div class="absolute inset-0 bg-brand-500/5"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-gradient-to-b from-brand-900 to-brand-950 p-10 md:p-14 rounded-3xl border border-brand-500/30 shadow-2xl text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Pronto para parar de perder dinheiro todos os dias?</h2>
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                    Se você continuar atendendo os clientes como fazia em 2015, seu negócio tem data para fechar. Abrace o atendimento moderno e veja seu faturamento explodir.
+                </p>
+                
+                <div class="flex flex-col items-center gap-4">
+                    <button class="w-full sm:w-auto px-10 py-5 text-xl font-bold rounded-xl bg-brand-500 hover:bg-brand-600 text-white transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(217,119,6,0.6)] flex items-center justify-center gap-3">
+                        <i data-lucide="lock" class="w-6 h-6"></i>
+                        Garantir Minha Vaga na Mentoria
+                    </button>
+                    <p class="text-sm text-gray-500 mt-4 flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-green-500"></i>
+                        Pagamento 100% Seguro. Satisfação Garantida.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/5 text-center text-gray-600 text-sm">
-        <p>&copy; 2024 Eduardo Gualberto - Todos os direitos reservados.</p>
+    <footer class="py-10 border-t border-white/10 bg-brand-950 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Mentoria de Atendimento e Vendas. Todos os direitos reservados.</p>
+        <p class="mt-2 text-xs text-gray-600">Este site não faz parte do Google ou Facebook. Os resultados variam de pessoa para pessoa.</p>
     </footer>
 
+    <script>
+        // Inicializa os ícones do Lucide
+        lucide.createIcons();
+    </script>
 </body>
 </html>
