@@ -121,9 +121,13 @@
 
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Before -->
-                <div class="bg-brand-900 rounded-2xl overflow-hidden border border-white/5 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="bg-brand-900 rounded-2xl overflow-hidden border border-white/5 grayscale hover:grayscale-0 transition-all duration-500 group">
                     <div class="aspect-[16/9] bg-gray-800 relative flex items-center justify-center overflow-hidden">
-                        <img src="https://photos.google.com/photo/AF1QipOT8wWeMidTTsLdS-jYZdCS6qCeUCC7n9AF0qii" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'; this.parentElement.innerHTML += '<div class=\"absolute inset-0 flex items-center justify-center bg-black/60 font-bold text-white\">[Imagem do Trabalho de R$ 2000]</div>'" alt="[Trabalho de 2000]" class="w-full h-full object-cover">
+                        <img src="images/fotominhaantes.JPG" alt="Minha foto antes" class="w-full h-full object-cover">
+                        <!-- Legenda de ajuda caso a imagem falhe no preview -->
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity p-4 text-center">
+                            <p class="text-xs text-white bg-brand-500 px-2 py-1 rounded">Caminho: images/fotominhaantes.JPG</p>
+                        </div>
                     </div>
                     <div class="p-8">
                         <div class="inline-block px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-sm font-semibold mb-4">A Minha Antiga Realidade</div>
@@ -133,12 +137,12 @@
                 </div>
 
                 <!-- After -->
-                <div class="bg-brand-900 rounded-2xl overflow-hidden border border-brand-500/30 shadow-[0_0_30px_rgba(217,119,6,0.1)]">
+                <div class="bg-brand-900 rounded-2xl overflow-hidden border border-brand-500/30 shadow-[0_0_30px_rgba(217,119,6,0.1)] group">
                     <div class="aspect-[16/9] bg-gray-800 relative flex items-center justify-center overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="[Imagem de hoje - R$ 6.000 a R$ 10.000/mês]" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-brand-500/10"></div>
-                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                             <span class="text-white/50 border-2 border-dashed border-white/30 p-4 rounded-lg font-bold">Substitua por sua Foto Atual</span>
+                        <img src="images/fotominhabc.jpg" alt="Minha foto hoje" class="w-full h-full object-cover">
+                        <!-- Legenda de ajuda caso a imagem falhe no preview -->
+                        <div class="absolute inset-0 bg-brand-500/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity p-4 text-center">
+                            <p class="text-xs text-white bg-brand-600 px-2 py-1 rounded">Caminho: images/fotominhabc.jpg</p>
                         </div>
                     </div>
                     <div class="p-8">
