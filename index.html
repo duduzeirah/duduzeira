@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentoria - Venda Sem Perder Vendas</title>
+    <title>A Solução | Mentoria de Atendimento</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -11,215 +11,199 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#fdf8f6',
-                            100: '#f2e8e5',
-                            500: '#d97706', // Amber 600
-                            600: '#b45309', // Amber 700
-                            900: '#0f172a', // Slate 900
-                            950: '#020617', // Slate 950
-                        }
+                        dark: '#000000',
+                        brand: '#ffffff',
+                        danger: '#ff3131',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Archivo Black', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+            color: transparent;
+        }
+        .vsl-container {
+            background: linear-gradient(180deg, #111 0%, #000 100%);
+            border: 1px solid #333;
+        }
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+    </style>
 </head>
-<body class="bg-brand-950 text-white font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-dark text-white font-sans selection:bg-brand selection:text-dark">
+
+    <!-- Urgência Top Bar -->
+    <div class="bg-danger text-white text-[10px] py-2 text-center font-black uppercase tracking-[0.2em]">
+        Atenção: Acesso limitado para quem fatura menos de R$ 2.000/mês
+    </div>
 
     <!-- Hero Section -->
-    <header class="relative overflow-hidden pt-20 pb-32 lg:pt-32 lg:pb-40">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-950/80 via-brand-950/90 to-brand-950"></div>
-        
-        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 text-brand-500 border border-brand-500/20 mb-8 font-medium text-sm tracking-wide">
-                <i data-lucide="flame" class="w-4 h-4"></i>
-                Vagas Abertas para a Mentoria
+    <section class="pt-16 pb-12 px-6 max-w-6xl mx-auto text-center">
+        <h1 class="font-display text-5xl md:text-8xl leading-none uppercase tracking-tighter mb-8">
+            PARA DE <span class="text-stroke">TRABALHAR</span><br>IGUAL UM LOUCO.
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-medium mb-12">
+            Se esforçar demais é o motivo de você continuar ganhando pouco. Eu vou te mostrar como <span class="text-white border-b-2 border-danger">converter o que você já tem</span> em R$ 10.000 por mês.
+        </p>
+
+        <!-- VSL Player Moderno -->
+        <div class="vsl-container max-w-4xl mx-auto rounded-lg overflow-hidden relative group mb-12 shadow-2xl">
+            <div class="aspect-video flex items-center justify-center relative">
+                <!-- Overlay de Play -->
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all flex items-center justify-center z-10">
+                    <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                        <i data-lucide="play" class="w-10 h-10 text-black fill-black ml-1"></i>
+                    </div>
+                </div>
+                <!-- Placeholder de Vídeo -->
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Thumbnail Vídeo de Vendas" class="w-full h-full object-cover opacity-50">
             </div>
-            
-            <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-                Seu negócio <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700">não quebra</span> por falta de marketing.<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-yellow-400">Ele quebra por falta de atendimento.</span>
-            </h1>
-            
-            <p class="mt-6 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
-                Pare de jogar dinheiro fora com anúncios que trazem clientes que sua equipe não sabe converter. Descubra o método de atendimento moderno que transforma curiosos em compradores fiéis.
+        </div>
+
+        <a href="https://wa.me/5562982402377" target="_blank" class="btn-pulse inline-block w-full md:w-auto px-12 py-7 bg-white text-black font-black text-xl rounded-sm uppercase tracking-tighter hover:bg-gray-200 transition-colors">
+            QUERO A SOLUÇÃO AGORA
+        </a>
+        <p class="mt-6 text-gray-500 text-xs uppercase font-bold tracking-widest flex items-center justify-center gap-2">
+            <i data-lucide="users" class="w-4 h-4"></i> 14 pessoas assistindo agora
+        </p>
+    </section>
+
+    <!-- Seção de Choque de Realidade -->
+    <section class="py-24 bg-zinc-950 border-y border-white/5">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="font-display text-4xl md:text-6xl uppercase leading-none mb-8">
+                    PRODUTO NÃO<br>TE DÁ DINHEIRO.
+                </h2>
+                <div class="space-y-6 text-gray-400 text-lg">
+                    <p>Milhares de pessoas têm produtos bons. Milhares de pessoas postam todo dia. E a maioria continua <span class="text-white">quebrada</span>.</p>
+                    <p>O dinheiro não está no que você vende, mas em <span class="text-white italic">como você atende</span>. Atendimento é a única coisa que separa quem trabalha muito de quem ganha muito.</p>
+                </div>
+            </div>
+            <div class="bg-dark p-8 border border-white/10 rounded-2xl">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 bg-danger/20 rounded-full flex items-center justify-center text-danger">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-black text-xl uppercase italic">Caso Real: Barbearia</h3>
+                </div>
+                <p class="text-gray-400 mb-6">Faturamento saltou de R$ 50k para R$ 100k apenas ajustando o atendimento no WhatsApp. Zero reais a mais em anúncios.</p>
+                <div class="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-white w-full"></div>
+                </div>
+                <div class="flex justify-between mt-2 font-black text-xs uppercase tracking-widest">
+                    <span>Antes: 50k</span>
+                    <span class="text-white">Depois: 100k</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O ANTES E DEPOIS (PONTO DE VIRADA) -->
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="font-display text-4xl md:text-7xl uppercase mb-4">MINHA ÚNICA <span class="text-stroke">PROMESSA</span></h2>
+            <p class="text-gray-500 uppercase tracking-widest font-black text-sm">Eu não herdei nada. Eu mudei meu jogo no atendimento.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Foto Antes -->
+            <div class="relative group">
+                <div class="absolute top-4 left-4 bg-black text-white px-4 py-1 text-xs font-black uppercase z-10 border border-white/20">
+                    2020: O Sufoco
+                </div>
+                <div class="aspect-[3/4] overflow-hidden rounded-lg grayscale border border-white/5 group-hover:grayscale-0 transition-all duration-700">
+                    <img src="images/fotominhaantes.JPG" alt="Minha foto antes" class="w-full h-full object-cover">
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-2xl font-black uppercase italic mb-2">R$ 2.000 / Mês</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Eu achava que precisava de mais clientes. Na verdade, eu só não sabia fechar os que eu já tinha. Trabalhava o dia todo e não sobrava nada.</p>
+                </div>
+            </div>
+
+            <!-- Foto Depois -->
+            <div class="relative group">
+                <div class="absolute top-4 left-4 bg-white text-black px-4 py-1 text-xs font-black uppercase z-10">
+                    HOJE: A SOLUÇÃO
+                </div>
+                <div class="aspect-[3/4] overflow-hidden rounded-lg border-2 border-white group-hover:scale-[1.02] transition-all duration-700 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
+                    <img src="images/fotominhabc.jpg" alt="Minha foto depois" class="w-full h-full object-cover">
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-2xl font-black uppercase italic mb-2 text-white">R$ 10.000 / Mês</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mesmo produto, mesma divulgação, mas o <span class="text-white font-bold">atendimento de elite</span> mudou o meu nível. Menos trabalho braçal e muito mais lucro líquido no bolso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Técnica: O que você vai levar -->
+    <section class="py-24 bg-white text-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-4xl md:text-6xl uppercase leading-none mb-20 text-center md:text-left">
+                NÃO É CURSO.<br>É O <span class="italic underline">MÉTODO ATUAL.</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="border-t-4 border-black pt-6">
+                    <span class="font-black text-4xl mb-4 block italic">01</span>
+                    <h5 class="font-black uppercase mb-4 tracking-tighter text-xl">Filtro de Curioso</h5>
+                    <p class="text-zinc-600 text-sm font-medium">Aprenda a descartar quem só quer seu preço e focar em quem tem o dinheiro na mão. Pare de perder tempo.</p>
+                </div>
+                <div class="border-t-4 border-black pt-6">
+                    <span class="font-black text-4xl mb-4 block italic">02</span>
+                    <h5 class="font-black uppercase mb-4 tracking-tighter text-xl">Atendimento Camaleão</h5>
+                    <p class="text-zinc-600 text-sm font-medium">Como ler a mente do cliente pelo WhatsApp e falar exatamente o que ele precisa ouvir para fechar agora.</p>
+                </div>
+                <div class="border-t-4 border-black pt-6">
+                    <span class="font-black text-4xl mb-4 block italic">03</span>
+                    <h5 class="font-black uppercase mb-4 tracking-tighter text-xl">Escala sem Anúncio</h5>
+                    <p class="text-zinc-600 text-sm font-medium">Dobre seu faturamento usando a base que você já tem. Lucro 100% livre de taxas de marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Inevitável -->
+    <section class="py-32 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block px-4 py-1 border border-white/20 text-xs font-black uppercase tracking-widest mb-8 text-gray-500">
+                Últimas vagas para o próximo grupo
+            </div>
+            <h2 class="font-display text-5xl md:text-8xl leading-none uppercase mb-12">
+                O PRÓXIMO NÍVEL<br>OU O <span class="text-danger">MESMO ERRO.</span>
+            </h2>
+            <p class="text-xl text-gray-400 mb-16 max-w-2xl mx-auto">
+                Você pode ignorar essa página e continuar trabalhando 12h por dia por um salário mínimo. Ou pode clicar abaixo e aprender a solução real.
             </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://wa.me/5562982402377" target="_blank" class="px-8 py-4 text-lg font-bold rounded-lg bg-brand-500 hover:bg-brand-600 text-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(217,119,6,0.4)] w-full sm:w-auto text-center">
-                    Quero Dobrar Minhas Vendas
-                </a>
-                <a href="#case" class="px-8 py-4 text-lg font-bold rounded-lg bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all w-full sm:w-auto text-center">
-                    Ver como funciona
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Case Study Section -->
-    <section id="case" class="py-24 bg-brand-900 border-y border-white/5">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                        Como eu fiz uma barbearia saltar de <span class="text-brand-500">50 mil para 100 mil</span> por mês.
-                    </h2>
-                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
-                        Eles investiam pesado em tráfego pago. O WhatsApp não parava de apitar. Mas no fim do mês, a conta não fechava. O problema? <strong>Eles perdiam 70% das vendas no atendimento.</strong>
-                    </p>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        Implementamos o <em>Método do Atendimento Camaleão</em>. Paramos de usar scripts engessados e começamos a ler o perfil de cada cliente, adaptando a abordagem para vender valor e criar conexão real.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-brand-950 p-6 rounded-xl border border-white/5">
-                            <div class="text-gray-500 text-sm font-medium mb-1">Faturamento Antes</div>
-                            <div class="text-3xl font-bold text-red-400">R$ 50k<span class="text-sm font-normal text-gray-500">/mês</span></div>
-                        </div>
-                        <div class="bg-brand-950 p-6 rounded-xl border border-brand-500/30 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 p-2 opacity-20">
-                                <i data-lucide="trending-up" class="w-12 h-12 text-brand-500"></i>
-                            </div>
-                            <div class="text-gray-500 text-sm font-medium mb-1 relative z-10">Faturamento Depois</div>
-                            <div class="text-3xl font-bold text-brand-500 relative z-10">R$ 100k<span class="text-sm font-normal text-gray-500">/mês</span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-tr from-brand-500 to-yellow-500 rounded-2xl opacity-20 blur-xl"></div>
-                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="[Imagem de uma Barbearia movimentada]" class="relative rounded-2xl shadow-2xl border border-white/10 w-full object-cover aspect-[4/3]">
-                    <div class="absolute -bottom-6 -left-6 bg-brand-950 p-4 rounded-xl border border-white/10 shadow-xl flex items-center gap-4">
-                        <div class="bg-green-500/20 p-3 rounded-full text-green-500">
-                            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-400">Crescimento de</p>
-                            <p class="font-bold text-xl">100% em 60 dias</p>
-                        </div>
-                    </div>
-                </div>
+            <a href="https://wa.me/5562982402377" target="_blank" class="btn-pulse inline-block w-full md:w-auto px-16 py-8 bg-white text-black font-black text-2xl rounded-sm uppercase tracking-tighter shadow-[0_20px_60px_rgba(255,255,255,0.2)]">
+                QUERO SAIR DO MÍNIMO
+            </a>
+            <div class="mt-12 flex justify-center gap-8 text-gray-600">
+                <i data-lucide="shield-check" class="w-8 h-8"></i>
+                <i data-lucide="credit-card" class="w-8 h-8"></i>
+                <i data-lucide="zap" class="w-8 h-8"></i>
             </div>
         </div>
     </section>
 
-    <!-- Personal Transformation Section -->
-    <section class="py-24 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Eu mudei a realidade dos outros porque <span class="text-brand-500">primeiro mudei a minha.</span></h2>
-                <p class="text-gray-400 text-lg">
-                    Eu sei o que é suar o mês inteiro e ver pouco dinheiro sobrar. Eu não nasci ensinando vendas, eu aprendi na trincheira.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Before -->
-                <div class="bg-brand-900 rounded-2xl overflow-hidden border border-white/5 grayscale hover:grayscale-0 transition-all duration-500 group">
-                    <div class="aspect-[16/9] bg-gray-800 relative flex items-center justify-center overflow-hidden">
-                        <img src="images/fotominhaantes.JPG" alt="Minha foto antes" class="w-full h-full object-cover">
-                        <!-- Legenda de ajuda caso a imagem falhe no preview -->
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity p-4 text-center">
-                            <p class="text-xs text-white bg-brand-500 px-2 py-1 rounded">Caminho: images/fotominhaantes.JPG</p>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <div class="inline-block px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-sm font-semibold mb-4">A Minha Antiga Realidade</div>
-                        <h3 class="text-2xl font-bold mb-2">Ganhava R$ 2.000 por mês</h3>
-                        <p class="text-gray-400">Trabalhava duro, muitas horas por dia, mas não sabia como fechar vendas de alto valor. Todo cliente parecia achar caro, e eu não sabia como contornar as objeções.</p>
-                    </div>
-                </div>
-
-                <!-- After -->
-                <div class="bg-brand-900 rounded-2xl overflow-hidden border border-brand-500/30 shadow-[0_0_30px_rgba(217,119,6,0.1)] group">
-                    <div class="aspect-[16/9] bg-gray-800 relative flex items-center justify-center overflow-hidden">
-                        <img src="images/fotominhabc.jpg" alt="Minha foto hoje" class="w-full h-full object-cover">
-                        <!-- Legenda de ajuda caso a imagem falhe no preview -->
-                        <div class="absolute inset-0 bg-brand-500/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity p-4 text-center">
-                            <p class="text-xs text-white bg-brand-600 px-2 py-1 rounded">Caminho: images/fotominhabc.jpg</p>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <div class="inline-block px-3 py-1 bg-brand-500/10 text-brand-500 rounded-full text-sm font-semibold mb-4">A Minha Realidade Hoje</div>
-                        <h3 class="text-2xl font-bold mb-2 text-white">Ganho de R$ 6.000 a R$ 10.000 /mês</h3>
-                        <p class="text-gray-400">Depois que entendi como funciona o atendimento e a psicologia de vendas de hoje, o jogo virou. Trabalho com mais inteligência, converto muito mais e tenho liberdade.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mentorship Details -->
-    <section class="py-24 bg-brand-900">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16">O que você vai aprender na <span class="text-brand-500">Mentoria</span></h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-brand-950 p-8 rounded-2xl border border-white/5 text-left hover:border-brand-500/50 transition-colors">
-                    <div class="bg-brand-500/20 w-14 h-14 flex items-center justify-center rounded-xl text-brand-500 mb-6">
-                        <i data-lucide="scan-face" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">O Atendimento Camaleão</h3>
-                    <p class="text-gray-400">Esqueça os scripts de vendas engessados. Aprenda a identificar o estilo e a frequência de cada cliente para adaptar sua abordagem de forma única e natural.</p>
-                </div>
-                
-                <div class="bg-brand-950 p-8 rounded-2xl border border-white/5 text-left hover:border-brand-500/50 transition-colors">
-                    <div class="bg-brand-500/20 w-14 h-14 flex items-center justify-center rounded-xl text-brand-500 mb-6">
-                        <i data-lucide="users" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Conexão Sob Medida</h3>
-                    <p class="text-gray-400">Cada cliente tem uma maneira diferente de ser atendido. Descubra como se moldar à realidade e ao tom de voz dele para gerar extrema confiança na hora da venda.</p>
-                </div>
-                
-                <div class="bg-brand-950 p-8 rounded-2xl border border-white/5 text-left hover:border-brand-500/50 transition-colors">
-                    <div class="bg-brand-500/20 w-14 h-14 flex items-center justify-center rounded-xl text-brand-500 mb-6">
-                        <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Acompanhamento Implacável</h3>
-                    <p class="text-gray-400">A fortuna está no follow-up. Aprenda a cobrar e relembrar o cliente no tempo certo (respeitando a frequência dele), sem nunca parecer chato ou desesperado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA & Offer -->
-    <section id="offer" class="py-24 relative">
-        <div class="absolute inset-0 bg-brand-500/5"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-gradient-to-b from-brand-900 to-brand-950 p-10 md:p-14 rounded-3xl border border-brand-500/30 shadow-2xl text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">Pronto para parar de perder dinheiro todos os dias?</h2>
-                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                    Se você continuar atendendo os clientes como fazia em 2015, seu negócio tem data para fechar. Abrace o atendimento moderno e veja seu faturamento explodir.
-                </p>
-                
-                <div class="flex flex-col items-center gap-4">
-                    <a href="https://wa.me/5562982402377" target="_blank" class="w-full sm:w-auto px-10 py-5 text-xl font-bold rounded-xl bg-brand-500 hover:bg-brand-600 text-white transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(217,119,6,0.6)] flex items-center justify-center gap-3">
-                        <i data-lucide="lock" class="w-6 h-6"></i>
-                        Garantir Minha Vaga na Mentoria
-                    </a>
-                    <p class="text-sm text-gray-500 mt-4 flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4 text-green-500"></i>
-                        Pagamento 100% Seguro. Satisfação Garantida.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-10 border-t border-white/10 bg-brand-950 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Mentoria de Atendimento e Vendas. Todos os direitos reservados.</p>
-        <p class="mt-2 text-xs text-gray-600">Este site não faz parte do Google ou Facebook. Os resultados variam de pessoa para pessoa.</p>
+    <footer class="py-12 border-t border-white/5 text-center text-[10px] text-gray-700 font-black uppercase tracking-[0.4em]">
+        Domínio &copy; 2026 - A Solução Para Quem Quer Ganhar Dinheiro de Verdade.
     </footer>
 
     <script>
-        // Inicializa os ícones do Lucide
         lucide.createIcons();
     </script>
 </body>
